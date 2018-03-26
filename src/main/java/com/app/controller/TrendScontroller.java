@@ -24,7 +24,7 @@ public class TrendScontroller
 		return twitter.timelineOperations().getUserTimeline("parosh_pd");
 	}*/
 	
-	@RequestMapping(produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	@RequestMapping(value="{id}",produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public List<Trend> gettrends(@PathVariable Long id ){
 		System.out.println("function called ");
 		return twitter.searchOperations().getLocalTrends(id).getTrends();
